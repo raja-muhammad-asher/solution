@@ -10,3 +10,7 @@ The objective is to create a function which is able to return the current stock 
 Notes:
 - Transactions may exist for SKUs which are not present in `stock.json`. It should be assumed that the starting quantity for these is 0.
 - Functionality can be split into many files to help keep the project clear and organised 
+
+# how to run
+Download and run 'npm install' to install node modules
+Type 'npm test' to run tests
