@@ -26,7 +26,8 @@ describe("getCurrentStockLevel returns correct stock level for existing SKU", ()
     .toStrictEqual({ sku: 'CLQ274846/07/46', qty: -45 });
   });
 
-  // For this test case I have removed transactions for SXB930757/87/87
+  // For this test case I have removed transactions for SXB930757/87/87 and added a fake transaction 
+  // that doesn't include order or refund
   it("should return { sku: 'SXB930757/87/87', qty: 3552 } for getCurrentStockLevel('SXB930757/87/87') for 0 transactions", 
   async () => {
     expect(await getCurrentStockLevel('SXB930757/87/87'))

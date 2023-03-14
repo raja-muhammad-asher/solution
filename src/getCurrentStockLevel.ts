@@ -1,20 +1,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import Stock from './interfaces/stock.interface';
+import Transaction from './interfaces/transaction.interface';
 
 const getCurrentStockLevel = async (sku: string): Promise<{ sku: string, qty: number }> => {
   const STOCK_FILE: string = path.join(__dirname, 'assets/stock.json');
   const TRANSACTIONS_FILE: string = path.join(__dirname, 'assets/transactions.json');
-
-  interface Transaction {
-    sku: string;
-    type: 'order' | 'refund';
-    qty: number;
-  }
-
-  interface Stock {
-    sku: string;
-    stock: number;
-  }
 
   try {
     const [stockData, transactionsData] = await Promise.all([
