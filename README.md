@@ -13,4 +13,4 @@ Notes:
 
 # how to run
 Download and run 'npm install' to install node modules
-Type 'npm test' to run tests
+Type 'npm run test-coverage' to run tests
