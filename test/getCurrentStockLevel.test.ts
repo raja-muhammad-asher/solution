@@ -16,37 +16,35 @@ describe("getCurrentStockLevel", () => {
 
   test("getCurrentStockLevel throws error for null SKU", () => {
     expect(
-      // @ts-expect-error
+      // @ts-expect-error: test invalid input
       async () => await getCurrentStockLevel(null)
     ).rejects.toThrow(Error);
-  });  
+  });
 
   test("getCurrentStockLevel throws error for numeric SKU", () => {
     expect(
-      // @ts-expect-error
+      // @ts-expect-error: test invalid input
       async () => await getCurrentStockLevel(123)
     ).rejects.toThrow(Error);
-  }); 
+  });
 
   test("getCurrentStockLevel throws error for object SKU", () => {
     expect(
-      // @ts-expect-error
-      async () => await getCurrentStockLevel({sku: 123})
+      // @ts-expect-error: test invalid input
+      async () => await getCurrentStockLevel({ sku: 123 })
     ).rejects.toThrow(Error);
-  }); 
+  });
 
   test("getCurrentStockLevel throws error for not passing SKU", () => {
     expect(
-      // @ts-expect-error
+      // @ts-expect-error: test invalid input
       async () => await getCurrentStockLevel()
     ).rejects.toThrow(Error);
-  }); 
+  });
 
   test("getCurrentStockLevel throws error for empty string SKU", () => {
-    expect(
-      async () => await getCurrentStockLevel("")
-    ).rejects.toThrow(Error);
-  }); 
+    expect(async () => await getCurrentStockLevel("")).rejects.toThrow(Error);
+  });
 
   // For this test case I have removed the last entry from stock.json to test it
   // SKU not present in stock.json but have entry in transactions.json
